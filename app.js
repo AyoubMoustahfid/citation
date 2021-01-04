@@ -79,7 +79,7 @@ app.post('/update',(req, res) => {
     let userId = req.body.id
 
     let sql = "Update citation SET name='"+req.body.name+"', description='"+req.body.description+"', img='"+req.body.img+"', category='"+req.body.category+"' where id ="+userId;
-    let query = conn.query(sql,(err, results) => {
+    let query = conn.query(sql,(err, result) => {
       if(err) throw err;
       res.redirect('/');
     });
@@ -97,6 +97,6 @@ app.get('/delete/:userId',(req, res) => {
 });
 
 //  Listing Server 
-app.listen(300, () => {
+app.listen(3000, () => {
     console.log('server is rinning')
 });
